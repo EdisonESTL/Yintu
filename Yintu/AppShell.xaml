@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:Yintu.Views"
+       x:Class="Yintu.AppShell">
+    <FlyoutItem Title="Yintu">
+        <ShellContent Title="Login" 
+                      ContentTemplate="{DataTemplate views:RoomView}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Productos">
+        <ShellContent Title="Producto"
+                      ContentTemplate="{DataTemplate views:ProductView}"/>
+    </FlyoutItem>
+    <MenuItem Text="help"/>
+</Shell>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:Yintu.ViewModels"
+             x:Class="Yintu.Views.ListaView">
+    <ContentPage.BindingContext>
+        <local:LoginViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="0000000000"
+                           PlaceholderColor="White"
+                           TextColor="White"
+                           ClearButtonVisibility="WhileEditing"
+                           BackgroundColor="#19346B"
+                           Text="{Binding CiUser}"/>
+            <Entry Placeholder="Contraseña"
+                           PlaceholderColor="White"
+                           TextColor="White"
+                           MaxLength="12"
+                           IsPassword="True"
+                           ClearButtonVisibility="WhileEditing"
+                           BackgroundColor="Blue"
+                           Text="{Binding PasswordUser}"/>
+            <Button Text="Probando" Command="{Binding ListarCommand}"></Button>
+            <ListView ItemsSource="{Binding Lista}" BackgroundColor="RoyalBlue">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="850">
+                            <StackLayout Orientation="Horizontal"
+                                     BackgroundColor="Red" WidthRequest="600">
+                                <Label Text="{Binding CiUser}" WidthRequest="150" BackgroundColor="White" HorizontalOptions="CenterAndExpand"/>
+                                <Label Text="{Binding NameUser}" WidthRequest="150" BackgroundColor="Wheat" HorizontalOptions="CenterAndExpand"/>
+                                <Label Text="{Binding PhoneUser}" WidthRequest="150" BackgroundColor="DarkBlue" HorizontalOptions="CenterAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

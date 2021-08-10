@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:Yintu.ViewModels"
+             x:Class="Yintu.Views.LoginView"
+             BackgroundColor="#19346B"
+             Padding="10"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <local:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Start"
+                         Padding="0, 70, 0, 0">
+                <Image Source="IconoSubirTitulo"/>
+                <Image Source="IconoDineroTitulo"/>
+                <Image Source="IconoTallerTitulo"/>
+            </StackLayout>
+            <Image Source="Yintu"/>
+            <Frame BorderColor="#AA6592"
+                   BackgroundColor="#19346B"
+                   VerticalOptions="CenterAndExpand"
+                   Padding="5, 35,10, 40">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="60"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="Usuario" 
+                           Grid.Column="0"
+                           Grid.Row="0"
+                           VerticalOptions="CenterAndExpand"/>
+                    <Image Source="Contrasenia"
+                           Grid.Column="0"
+                           Grid.Row="1"
+                           VerticalOptions="CenterAndExpand"/>
+                    <Entry Placeholder="0000000000"
+                           Grid.Column="1"
+                           Grid.Row="0"
+                           PlaceholderColor="White"
+                           TextColor="White"
+                           ClearButtonVisibility="WhileEditing"
+                           BackgroundColor="#19346B"
+                           Text="{Binding CiUser}"/>
+                    <Entry Placeholder="Contraseña"
+                           Grid.Column="1"
+                           Grid.Row="1"
+                           PlaceholderColor="White"
+                           TextColor="White"
+                           MaxLength="12"
+                           IsPassword="True"
+                           ClearButtonVisibility="WhileEditing"
+                           Text="{Binding PasswordUser}"/>
+                    <ImageButton Source="BotonEntrar"
+                                 Grid.Column="2"
+                                 Grid.RowSpan="2"
+                                 VerticalOptions="CenterAndExpand"
+                                 BackgroundColor="#19346B"
+                                 Command="{Binding EntryCommand}"/>
+                </Grid>
+            </Frame>
+            <StackLayout VerticalOptions="EndAndExpand"
+                         Padding="0, 0, 0, 50">
+                <Button Text="Registrarse"
+                        BackgroundColor="#19346B"
+                        TextColor="#00FFA8"
+                        Command="{Binding RegisterCommand}"/>
+                <Image Source="PiliusFabricantes"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
