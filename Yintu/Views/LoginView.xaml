@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:local="clr-namespace:Yintu.ViewModels"
+             xmlns:VM ="clr-namespace:Yintu.ViewModels"
              x:Class="Yintu.Views.LoginView"
              BackgroundColor="#19346B"
              Padding="10"
              Shell.NavBarIsVisible="False"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.BindingContext>
-        <local:LoginViewModel/>
+        <VM:LoginViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">

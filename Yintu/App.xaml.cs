@@ -11,8 +11,8 @@ namespace Yintu
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginView());
-            //MainPage = new AppShell();
+            //MainPage = new NavigationPage(new LoginView());
+            MainPage = new AppShell();
         }
 
         protected override void OnStart()
