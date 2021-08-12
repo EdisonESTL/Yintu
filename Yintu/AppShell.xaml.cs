@@ -18,6 +18,7 @@ namespace Yintu
         private void RegisterRoutes()
         {
             Routing.RegisterRoute("RoomAdmin", typeof(RoomView));
+            Routing.RegisterRoute("registration", typeof(RegistrationView));
         }
     }
 }

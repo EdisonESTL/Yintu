@@ -2,15 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:VM="clr-namespace:Yintu.ViewModels"
-             x:Class="Yintu.Views.YintuView">
+             x:Class="Yintu.Views.YintuView"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False">
     <ContentPage.BindingContext>
         <VM:YintuViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="Yintu"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <ActivityIndicator x:Name="LoadingLogin"
+                               IsRunning="True"
+                               VerticalOptions="CenterAndExpand"
+                               Color="Green"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

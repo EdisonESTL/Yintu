@@ -79,5 +79,20 @@ namespace Yintu.DataBase
         {
             _dataBase.InsertAsync(us);
         }
+
+        public bool Delete()
+        {
+            var f = _dataBase.QueryAsync<UserModel>("DELETE * FROM UserModel");
+            f.Wait();
+            var tg = f.Result;
+            if(tg != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

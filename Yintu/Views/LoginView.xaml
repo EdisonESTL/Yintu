@@ -6,7 +6,7 @@
              BackgroundColor="#19346B"
              Padding="10"
              Shell.NavBarIsVisible="False"
-             NavigationPage.HasNavigationBar="False">
+             Shell.FlyoutBehavior="Disabled">
     <ContentPage.BindingContext>
         <VM:LoginViewModel/>
     </ContentPage.BindingContext>

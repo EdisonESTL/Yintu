@@ -3,17 +3,14 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Yintu.Views"
        x:Class="Yintu.AppShell">
-    <FlyoutItem Title="Yintu">
+    <ShellItem Route="login" FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate views:LoginView }"/>
+    </ShellItem>
+    <FlyoutItem Title="Main" IsVisible="True">
         <ShellContent Title="Yintu"
-                      ContentTemplate="{DataTemplate views:YintuView}"/>
+                      ContentTemplate="{DataTemplate views:RoomView}"
+                      Route="main"/>
     </FlyoutItem>
-    <FlyoutItem Title="Login">
-        <ShellContent Title="Login" 
-                      ContentTemplate="{DataTemplate views:RoomView}"/>
-    </FlyoutItem>
-    <FlyoutItem Title="Productos">
-        <ShellContent Title="Producto"
-                      ContentTemplate="{DataTemplate views:ProductView}"/>
-    </FlyoutItem>
+    
     <MenuItem Text="help"/>
 </Shell>
