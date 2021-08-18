@@ -2,7 +2,12 @@
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Yintu.Views"
-       x:Class="Yintu.AppShell">
+       x:Class="Yintu.AppShell"
+       BackgroundColor="#19346B"
+       FlyoutBackgroundColor="#19346B"
+       ForegroundColor="#00FFA8"
+       DisabledColor="White"
+       TitleColor="#00FFA8">
     <ShellItem Route="login" FlyoutItemIsVisible="False">
         <ShellContent ContentTemplate="{DataTemplate views:LoginView }"/>
     </ShellItem>
@@ -11,6 +16,15 @@
                       ContentTemplate="{DataTemplate views:RoomView}"
                       Route="main"/>
     </FlyoutItem>
-    
+    <FlyoutItem Title="Product" IsVisible="True">
+        <ShellContent Title="Productos"
+                      ContentTemplate="{DataTemplate views:ProductView}"
+                      Route="product"/>
+    </FlyoutItem>
+    <FlyoutItem Title="User" IsVisible="True">
+        <ShellContent Title="Usuarios"
+                      ContentTemplate="{DataTemplate views:UserView}"
+                      Route="users"/>
+    </FlyoutItem>
     <MenuItem Text="help"/>
 </Shell>

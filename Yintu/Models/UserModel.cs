@@ -19,7 +19,7 @@ namespace Yintu.Models
         }
         private string _ciUSer;
 
-        [Column("NameUSer")]
+        [Column("NameUser")]
         public string NameUser 
         {
             get { return _nameUser; }
