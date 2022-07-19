@@ -10,8 +10,10 @@
     <ContentPage.BindingContext>
         <VM:LoginViewModel/>
     </ContentPage.BindingContext>
+    <!--Vista de la pagina de Logueo Yintu-->
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
+            <!--Iconos superiores-->
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="Center"
                          VerticalOptions="Start"
@@ -20,10 +22,11 @@
                 <Image Source="IconoDineroTitulo"/>
                 <Image Source="IconoTallerTitulo"/>
             </StackLayout>
-            <Image Source="Yintu"/>
+            <!--Imagen Yintu-->
+            <Image Source="Yintu"/> 
+            <!--Formulario Usuario Contraseña-->
             <Frame BorderColor="#AA6592"
                    BackgroundColor="#19346B"
-                   VerticalOptions="CenterAndExpand"
                    Padding="5, 35,10, 40">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -68,14 +71,11 @@
                                  Command="{Binding EntryCommand}"/>
                 </Grid>
             </Frame>
-            <StackLayout VerticalOptions="EndAndExpand"
-                         Padding="0, 0, 0, 50">
-                <Button Text="Registrarse"
-                        BackgroundColor="#19346B"
-                        TextColor="#00FFA8"
-                        Command="{Binding RegisterCommand}"/>
-                <Image Source="PiliusFabricantes"/>
-            </StackLayout>
+            <!--Opcion Registrarse-->
+            <Button Text="Registrarse" BackgroundColor="{StaticResource Transparente}" TextColor="{StaticResource VerdeYintu}"
+                    Command="{Binding RegisterCommand}" IsVisible="{Binding IsRegister}"/>
+            <!--Imagen Pilius Fabricantes-->
+            <Image Source="PiliusFabricantes"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

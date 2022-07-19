@@ -11,20 +11,25 @@
     <ShellItem Route="login" FlyoutItemIsVisible="False">
         <ShellContent ContentTemplate="{DataTemplate views:LoginView }"/>
     </ShellItem>
+    <!--
     <FlyoutItem Title="Main" IsVisible="True">
         <ShellContent Title="Yintu"
                       ContentTemplate="{DataTemplate views:RoomView}"
                       Route="main"/>
     </FlyoutItem>
+    <FlyoutItem Title="Pedidos"></FlyoutItem>
     <FlyoutItem Title="Product" IsVisible="True">
         <ShellContent Title="Productos"
                       ContentTemplate="{DataTemplate views:ProductView}"
                       Route="product"/>
     </FlyoutItem>
+    <FlyoutItem Title="Compras">
+    </FlyoutItem>
+    <FlyoutItem Title="Materiales"></FlyoutItem>
     <FlyoutItem Title="User" IsVisible="True">
         <ShellContent Title="Usuarios"
                       ContentTemplate="{DataTemplate views:UserView}"
-                      Route="users"/>
+                      Route="users"/> 
     </FlyoutItem>
-    <MenuItem Text="help"/>
+    <MenuItem Text="help"/>-->
 </Shell>

@@ -12,7 +12,6 @@ namespace Yintu
         {
             InitializeComponent();
             RegisterRoutes();
-            BindingContext = this;
         }
 
         private void RegisterRoutes()

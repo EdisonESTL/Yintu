@@ -10,9 +10,9 @@ namespace Yintu
         public App()
         {
             InitializeComponent();
-
-            //MainPage = new NavigationPage(new LoginView());
             MainPage = new AppShell();
+
+            //MainPage = new NavigationPage(new WelcomeView());
         }
 
         protected override void OnStart()

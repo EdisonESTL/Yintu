@@ -1,8 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:VM="clr-namespace:Yintu.ViewModels"
              x:Class="Yintu.Views.RegistrationView"
-             BackgroundColor="#E3E3E3">
+             BackgroundColor="#E3E3E3"
+             Shell.FlyoutBehavior="Disabled">
+    <ContentPage.BindingContext>
+        <VM:RegisterViewModel/>
+    </ContentPage.BindingContext>
     <Shell.TitleView>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -19,51 +24,75 @@
                VerticalOptions="CenterAndExpand"
                Margin="10,10,10,0"
                Padding="30,10,30,30">
-                <StackLayout>
-                    <Label Text="Registro"
+                <ScrollView>
+                    <StackLayout>
+                        <Label Text="Registro"
                            TextColor="#00FFA8"
                            FontSize="Title"
                            VerticalOptions="CenterAndExpand" 
                            HorizontalOptions="CenterAndExpand"
                            Margin="0,0,0,5"/>
-                    <Entry Placeholder="Número de cédula"
+                        <Entry Placeholder="Número de cédula"
                            BackgroundColor="White"
                            Margin="0,0,0,5"
-                           FontSize="Small"/>
-                    <Entry Placeholder="Nombre y apellido"
+                           FontSize="Small"
+                           Text="{Binding CiUser}"
+                           ClearButtonVisibility="WhileEditing"
+                           Keyboard="Numeric"/>
+                        <Entry Placeholder="Nombre y apellido"
                            BackgroundColor="White"
                            Margin="0,0,0,5"
-                           FontSize="Small"/>
-                    <Entry Placeholder="Correo electrónico"
+                           FontSize="Small"
+                           Text="{Binding NameUser}"
+                           ClearButtonVisibility="WhileEditing"/>
+                        <Entry Placeholder="Correo electrónico"
                            BackgroundColor="White"
                            Margin="0,0,0,5"
-                           FontSize="Small"/>
-                    <Entry Placeholder="Número de teléfono"
+                           FontSize="Small"
+                           Text="{Binding MailUser}"
+                           ClearButtonVisibility="WhileEditing"
+                           Keyboard="Email"/>
+                        <Entry Placeholder="Número de teléfono"
                            BackgroundColor="White"
                            Margin="0,0,0,5"
-                           FontSize="Small"/>
-                    <Entry Placeholder="Contraseña"
+                           FontSize="Small"
+                           Text="{Binding PhoneUser}"
+                           ClearButtonVisibility="WhileEditing"
+                           Keyboard="Telephone"/>
+                        <Entry Placeholder="Contraseña"
                            BackgroundColor="White"
                            Margin="0,0,0,5"
-                           FontSize="Small"/>
-                    <Entry Placeholder="Repetir contraseña"
+                           FontSize="Small"
+                           Text="{Binding PasswordUser}"
+                           ClearButtonVisibility="WhileEditing"
+                           IsPassword="True"/>
+                        <Entry Placeholder="Repetir contraseña"
                            BackgroundColor="White"
                            Margin="0,0,0,5"
-                           FontSize="Small"/>
-                    <Entry Placeholder="Código"
+                           FontSize="Small"
+                           Text="{Binding PassClon}" 
+                           ClearButtonVisibility="WhileEditing"
+                           IsPassword="True"/>
+                        <Entry Placeholder="Código"
                            BackgroundColor="White"
-                           FontSize="Small"/>
-                </StackLayout>
+                           FontSize="Small"
+                           Text="{Binding TypeUser}"
+                           ClearButtonVisibility="WhileEditing"/>
+                    </StackLayout>
+                </ScrollView>
+                
             </Frame>
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="CenterAndExpand"
                          Padding="0,0,0,10">
                 <Button Text="Cancelar"
                         BackgroundColor="#D10000"
-                        TextColor="White"/>
+                        TextColor="White"
+                        Command="{Binding CancelCommand}"/>
                 <Button Text="Aceptar"
                         BackgroundColor="#19346B"
-                        TextColor="White"/>
+                        TextColor="White"
+                        Command="{Binding RegisterCommand}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

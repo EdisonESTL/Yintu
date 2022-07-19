@@ -10,8 +10,11 @@ using Yintu.Views;
 
 namespace Yintu.ViewModels
 {
-    public class LoginViewModel : UserModel
+    public class LoginViewModel : BaseViewModel
     {
+        /*public string Usuario { get; set; }
+        public string Contrasenia { get; set; }*/
+
         public List<UserModel> _lista;
         public List<UserModel> Lista
         {
@@ -24,7 +27,7 @@ namespace Yintu.ViewModels
 
         public LoginViewModel()
         {
-            
+            IsRegister = true;
             EntryCommand = new Command(() => Entry());
             RegisterCommand = new Command(() => Register());
         }
@@ -32,10 +35,9 @@ namespace Yintu.ViewModels
         private async void Entry()
         {
             RulesValidation validar = new RulesValidation();
-            var i = validar.ValidarLoginCamps(CiUser, PasswordUser);
+            int val = validar.ValidarCiPassword(CiUser, PasswordUser);
 
-            
-            if(i == 1)
+            if(val == 1)
             {
                 UserDb user = await UserDb.Instance;
                 var j = user.ValidarUsuario(CiUser, PasswordUser);
@@ -52,8 +54,19 @@ namespace Yintu.ViewModels
                                                                     "Sus datos no se encuentran registrados en nuestro sistema",
                                                                     "Aceptar");
                 }
+            } 
+            if(val == 2)
+            {
+                await Shell.Current.DisplayAlert("Error",
+                    "Alguno de los campos esta incompleto o vacio",
+                    "Aceptar");
             }
-
+            if(val == 3)
+            {
+                await Shell.Current.DisplayAlert("Error",
+                    "El numero de serie es incorrecto",
+                    "Aceptar");
+            }
         }
 
         private async void Register()

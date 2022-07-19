@@ -2,5 +2,15 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Yintu.App">
-
+    <Application.Resources>
+        <Color x:Key="Transparente">#00FFFFFF</Color>
+        <Color x:Key="AzulYintu">#19346B</Color>
+        <Color x:Key="VerdeYintu">#00FFA8</Color>
+        <Color x:Key="BlancoYintu">#FFFF</Color>
+        <Color x:Key="RojoYintu">#98061D</Color>
+        <Color x:Key="RosaYintu">#AA6592</Color>
+        <Color x:Key="FucsiaYintu">#B00575</Color>
+        <Color x:Key="NaranjaYintu">#DD5C0A</Color>
+        <Color x:Key="RojoClaroYintu">#CB0D00</Color>
+    </Application.Resources>
 </Application>

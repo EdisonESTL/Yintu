@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using SQLite;
-using Xamarin.Forms;
 using Yintu.Models;
 
 namespace Yintu.DataBase
@@ -75,9 +72,14 @@ namespace Yintu.DataBase
             
         }
 
-        public void Save(UserModel us)
+        public Task<int> SaveUser(UserModel us)
         {
-            _dataBase.InsertAsync(us);
+            return _dataBase.InsertAsync(us);
+        }
+
+        public Task<int> UpdateUser(UserModel us)
+        {
+            return _dataBase.UpdateAsync(us);
         }
 
         public bool Delete()
